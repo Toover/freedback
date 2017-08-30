@@ -5,7 +5,7 @@ The main principles driving this project are to be found and maintained in this
 file.
 
 The vision
-++++++++++
+----------
 
 Everything deserve feedback! Especially when us, people are impacted. Even
 more: it should be required that anything that may impact us provide a way
@@ -18,7 +18,7 @@ that platforms can publish them and benefit the organizations, or the users
 themselves.
 
 The strategy
-++++++++++++
+------------
 
 The vision cannot be achieved without a critical mass of users and
 organizations agreeing upon using Freedback. So maybe the vision will
@@ -31,7 +31,7 @@ must not compromise the vision. To achieve this, libraries and applications
 should be developed, but the protocol and specifications must remain stable.
 
 Use cases
-+++++++++
+---------
 
 As a consumer, I have access to a mobile application that allows me to provide
 feedback without subscription on:
@@ -60,7 +60,7 @@ other feedback entries by replying to them. I may want to keep my identity
 consistent accross devices and in time.
 
 What Freedback is
-+++++++++++++++++
+-----------------
 
 Before anything, Freedback is a specification and a protocol for representing
 and communicating feedback about anything that has a reference. To ensure
