@@ -107,3 +107,12 @@ always happen in projects, and damage can be controlled when good maintenance
 practices at respected: specification, review, testing, documentation, code
 consistency and expressivity are examples of the good practices required to
 build the reliability of the project in the long-term.
+
+Using Freedback in Freedback
+----------------------------
+
+Though the core of the development process should not depend on Freedback, the
+software delivered to use Freedback should also use Freedback to provide
+feedback about the project. For example, the client application should let user
+produce feedback on the application itself. Using what we produce forces us to
+see it, and be more critical about it.
