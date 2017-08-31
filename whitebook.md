@@ -63,7 +63,7 @@ What Freedback is
 -----------------
 
 Before anything, Freedback is a specification and a protocol for representing
-and communicating feedback about anything that has a reference. To ensure
+and communicating feedback about anything that has an identity. To ensure
 a minimal support, the Freedback project may include:
 
 - a library to embed in applications that desire to use Freedback
@@ -79,3 +79,31 @@ a minimal support, the Freedback project may include:
 
 Freedback is free as in freedom, and can be used anywhere with a
 non-contaminating license. It is encouraged to produce data with 
+
+As standard as possible
+-----------------------
+
+When choosing a solution for an interface or for an implementation, always:
+
+- consider existing alternatives
+
+- prefer standard alternatives by default
+
+- for standards, the newer the better, by default
+
+Examples of standards: RFCs, ISO, IPv6, HTTP, C++ STL, Docker...
+
+Quality level
+-------------
+
+Testability is a requirement to any piece of software. As many features
+and fixes as possible must be proven using automated tests. Any untested
+feature is a risk for the reliability of the software. Unreliable software
+is unattractive and not suitable for industries. High reliability is a
+requirement for the long-term vision.
+
+Reliability not only concerns the software, but the project itself. Accidents
+always happen in projects, and damage can be controlled when good maintenance
+practices at respected: specification, review, testing, documentation, code
+consistency and expressivity are examples of the good practices required to
+build the reliability of the project in the long-term.
