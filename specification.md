@@ -48,3 +48,13 @@ maintainers. The services themselves should be able to guarantee it keeps
 on working. DHT is a good tool for implementing a distributed directory,
 and is resilient. The distributed data should be as light as possible, and
 only helps clients to find the root URL of the services.
+
+This root URL is a requirement to resolve the REST API of the service. The
+API may change in time, so the service should announce the version of that
+API when querying the root URL. With the root URL, the API version and the
+history of the APIs specified by the project, it should be possible for a
+client use the target service fully.
+
+The API specification must therefore be formalized in a way to make it
+programmatically inspectable, so that we can assert the suitability of the
+client code.
