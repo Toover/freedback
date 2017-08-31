@@ -58,3 +58,85 @@ client use the target service fully.
 The API specification must therefore be formalized in a way to make it
 programmatically inspectable, so that we can assert the suitability of the
 client code.
+
+Providing Feedback
+------------------
+
+This is the most important part. A single REST endpoint should allow to input
+a feedback entry. A feedback entry consists in at least an identifiable
+subject, an identifiable feedback provider and the feedback content. Various
+types of feedback contents may exist and appear in the future. For example: 
+"comment", "rating" or "issue". Each type of feedback is associated with some
+data type. The data types are to be specified and respected. Unknown, new,
+data types can be used freely, but services must warn, if some data could not
+be processed.
+
+Storing Feedback
+----------------
+
+Feedback can be of various, unexpected types. It is important that the
+server library suggests a default data storage that supports unexpected
+types. But it must remain an optional helper. Various connectors should be
+supported so that service providers can choose the database implementation
+they want.
+
+The information always consists in the following relation: a user provided
+some a feedback about a subject. The feedback is regroups a set of
+arbitrarily typed feedback data.
+
+Retrieving Feedback
+-------------------
+
+It is up to the service provider to choose whether and how to distribute the
+data. Freedback cannot force the data to be published, but it should provide
+a default mechanism, as an incentive to share data, the Open Data way.
+
+The focus of Freedback is to provide feedback on a subject, not to track the
+user behavior! So the recommended query API consists in:
+
+- providing a listing of the subjects
+
+- for a set of subjects, retrieve all feedbacks
+
+- for a set of subjects, retrieve feedbacks in a given set of types
+
+Data Distribution Policies
+--------------------------
+
+The data collected by Freedback must always come along with licensing
+information. The client applications must specify explicitly the associated
+licensing information, so that user can be aware of how their data could be
+processed. Open Data licensing or Business-alike Creative Commons are the most
+permissive license, and should be proposed by default.
+
+The licensing information must be made available on a specific endpoint, that
+and has a contractual value for both collecting and publishing. The supported
+licence strings need to be specified, so that feedback miners can filter out
+data depending on the licensing.
+
+Subject, User and Type Identification
+-------------------------------------
+
+It is recommended that a subject is an URI, like specified in RDF. Users too,
+but they often are anonymous. In that case, UUIDs should be supported. Type
+identification should be specified as an URI too, like predicates are specified
+in RDF.
+
+API Specification
+-----------------
+
+It is a file found:
+
+- In the sources of Freedback
+
+- In any binary distribution
+
+- Online in the documentation of Freedback
+
+It holds the information of since when an API was specified, and when it was
+deprecated or removed. It should be easy to parse to figure out what is the
+current API. It should be programmatically readable so that to show the
+available API for given version ranges.
+
+API version is an integer that is incremented whenever a set of API changes, in
+the spirit of continuous release.
