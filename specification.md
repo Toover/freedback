@@ -13,8 +13,7 @@ reasons, the content of the HTTP requests should be encrypted, for example
 using SSL.
 
 The newest standard to match this spec would be SSL-encrypted HTTP/2 over
-TCP/IPv6. The current standard for web APIs is REST, where structured data
-is exchanged in HTTP requests to specified URLs.
+TCP/IPv6. Consider REST APIs or gRPC, for example.
 
 Protocol Negotiation
 --------------------
@@ -58,6 +57,16 @@ client use the target service fully.
 The API specification must therefore be formalized in a way to make it
 programmatically inspectable, so that we can assert the suitability of the
 client code.
+
+Authentication
+--------------
+
+In some cases, a Freedback service may limit its access to recognized users.
+Authentication is therefore required, and may have an impact in every request
+between the client and the server. Authentication is to be handled by the
+service provider, but the Freedback protocol must allow arbitrary
+authentication data in the messages. It must be specified how authentication
+is meant to work, with the help of practicle examples.
 
 Providing Feedback
 ------------------
@@ -113,6 +122,11 @@ The licensing information must be made available on a specific endpoint, that
 and has a contractual value for both collecting and publishing. The supported
 licence strings need to be specified, so that feedback miners can filter out
 data depending on the licensing.
+
+According to laws and regulations (citations needed), users retain full control
+on their data and can view, modify and delete pieces or all of it. As a
+consequence, the system should enforce a way for clients to alter the entries
+they provided.
 
 Subject, User and Type Identification
 -------------------------------------

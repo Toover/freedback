@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.freedack.prototype";
+option java_outer_classname = "FreedbackPrototype";
+option objc_class_prefix = "Freedback";
+
+package freedback;
+
+// Service with an endpoint to receive freedback entries.
+service Receiver {
+  rpc submit(Entry) returns(EntryAccess) {}
+  rpc delete(EntryAccess) returns(Empty) {}
+}
+
+// Entries may carry various specific data.
+message Entry {
+  string subject = 1;
+  Comment comment = 2;
+  Rating rating = 3;
+  Issue issue = 4;
+}
+
+message EntryAccess
+{
+  string url = 1;
+  string authentication = 2;
+}
+
+message Empty {}
+
+message Comment {
+  string text = 1;
+}
+
+// A rating depend on the scale it is on.
+// Using a float here would induce some loss of information.
+message Rating {
+  uint32 value = 1;
+  uint32 divisor = 2;
+}
+
+message Issue {
+  string text = 1;
+}
