@@ -1,0 +1,9 @@
+README.md
+freedback_grpc_python/freedback.proto
+freedback_grpc_python/freedback_client.py
+freedback_grpc_python/freedback_pb2.py
+freedback_grpc_python/freedback_pb2_grpc.py
+freedback_grpc_python/freedback_server.py
+freedback_grpc_python/test_freedback.py
+specification.md
+whitebook.md
