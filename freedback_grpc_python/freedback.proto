@@ -21,8 +21,7 @@ message Entry {
   Issue issue = 4;
 }
 
-message EntryAccess
-{
+message EntryAccess {
   string url = 1;
   string authentication = 2;
 }

@@ -34,11 +34,12 @@ def serve():
   freedback_pb2_grpc.add_ReceiverServicer_to_server(Receiver(), server)
   server.add_insecure_port('[::]:50051')
   server.start()
+  return server
+
+if __name__ == '__main__':
+  server = serve()
   try:
     while True:
       time.sleep(60 * 60 * 24)
   except KeyboardInterrupt:
     server.stop(0)
-
-if __name__ == '__main__':
-  serve()
